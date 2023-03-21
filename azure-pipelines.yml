@@ -40,3 +40,5 @@ stages:
   condition: succeeded()
   jobs:
   - template: node-deploy.yml@templates  # Template reference
+    parameters:
+      package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
