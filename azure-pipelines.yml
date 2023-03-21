@@ -12,6 +12,7 @@ resources:
       type: github
       name: miika3l/azure-pipelines-templates
       endpoint: miika3l # Azure DevOps service connection
+      ref: refs/heads/master
 
 variables:
 
