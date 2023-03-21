@@ -32,13 +32,13 @@ stages:
 - stage: Build
   displayName: Build stage
   jobs:
-  - template: node-build.yml@templates  # Template reference
+  - template: node/node-build.yml@templates  # Template reference
 
 - stage: Deploy
   displayName: Deploy stage
   dependsOn: Build
   condition: succeeded()
   jobs:
-  - template: node-deploy.yml@templates  # Template reference
+  - template: node/node-deploy.yml@templates  # Template reference
     parameters:
       package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
